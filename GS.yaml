@@ -19,6 +19,8 @@ spec:
       containers:
       - name: shankargajula-app
         image: "dockerawsdevops1/docker-private-repo:latest"
+      imagePullSecrets:
+      - name: smily
         ports:
           - containerPort: 3000
 ---
