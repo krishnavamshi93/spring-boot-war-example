@@ -2,22 +2,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: shankarg-app
+  name: shankargajula-app
   namespace: default
   labels:
-    app: shankarg-app
+    app: shankargajula-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shankarg-app
+      app: shankargajula-app
   template:
     metadata:
       labels:
-        app: shankarg-app
+        app: shankargajula-app
     spec:
       containers:
-      - name: shankarg-app
+      - name: shankargajula-app
         image: "dockerawsdevops1/docker-private-repo:latest"
         ports:
           - containerPort: 3000
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: shankarg-app
+  name: shankargajula-app
   namespace: default
 spec:
   selector:
-    app: shankarg-app
+    app: shankargajula-app
   type: LoadBalancer
   ports:
   - name: http
