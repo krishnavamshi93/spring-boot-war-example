@@ -18,7 +18,7 @@ metadata:
 spec:
   selector:
     app: priv-gs-gs
-  type: LoadBalancer
+  type: NodePort
   ports:
   - name: http
     targetPort: 3000
