@@ -1,23 +1,24 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pri-gs-gs
+  name: priv-gs-gs
 spec:
   containers:
   - name: private-gsgoud
     image: "dockerawsdevops1/docker-private-repo:latest"
   imagePullSecrets:
   - name: smily
-  
+   ports:
+     - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: pri-gs-gs
+  name: priv-gs-gs
   namespace: default
 spec:
   selector:
-    app: pri-gs-gs
+    app: priv-gs-gs
   type: LoadBalancer
   ports:
   - name: http
