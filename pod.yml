@@ -8,3 +8,18 @@ spec:
     image: "dockerawsdevops1/docker-private-repo:latest"
   imagePullSecrets:
   - name: smily
+  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: private-gs-gs
+  namespace: default
+spec:
+  selector:
+    app: private-gs-gs
+  type: LoadBalancer
+  ports:
+  - name: http
+    targetPort: 3000
+    port: 80
