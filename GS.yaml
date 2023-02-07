@@ -1,9 +1,9 @@
 ---
 kind: Deployment
-apiVersion: apps/v2
+apiVersion: apps/v1
 metadata:
   name: shankargajula1-app
-  namespace: default
+  namespace: shanku
   labels:
     app: shankargajula1-app
 spec:
@@ -24,11 +24,11 @@ spec:
         ports:
           - containerPort: 3000
 ---
-apiVersion: v2
+apiVersion: v1
 kind: Service
 metadata:
   name: shankargajula1-app
-  namespace: default
+  namespace: shankau
 spec:
   selector:
     app: shankargajula1-app
