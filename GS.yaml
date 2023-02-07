@@ -1,37 +1,37 @@
 ---
 kind: Deployment
-apiVersion: apps/v1
+apiVersion: apps/v2
 metadata:
-  name: shankargajula-app
+  name: shankargajula1-app
   namespace: default
   labels:
-    app: shankargajula-app
+    app: shankargajula1-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shankargajula-app
+      app: shankargajula1-app
   template:
     metadata:
       labels:
-        app: shankargajula-app
+        app: shankargajula1-app
     spec:
       containers:
-      - name: shankargajula-app
+      - name: shankargajula1-app
         image: "dockerawsdevops1/docker-private-repo:latest"
       imagePullSecrets:
       - name: smily
         ports:
           - containerPort: 3000
 ---
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
-  name: shankargajula-app
+  name: shankargajula1-app
   namespace: default
 spec:
   selector:
-    app: shankargajula-app
+    app: shankargajula1-app
   type: LoadBalancer
   ports:
   - name: http
