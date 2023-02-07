@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: private-gs
+  name: private-gs-gs
 spec:
   containers:
-  - name: privateapp-gs
+  - name: privateapp-gsgoud
     image: "dockerawsdevops1/docker-private-repo:latest"
   imagePullSecrets:
   - name: smily
