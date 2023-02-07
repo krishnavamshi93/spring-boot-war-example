@@ -19,4 +19,7 @@ spec:
   selector:
     app: priv-gs-gs
   type: LoadBalancer
-   
+  ports:
+  - name: http
+    targetPort: 3000
+    port: 80 
